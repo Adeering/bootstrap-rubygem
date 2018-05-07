@@ -1,3 +1,5 @@
+require 'bundler/gem_tasks'
+
 lib_path = File.join(File.dirname(__FILE__), 'lib')
 $:.unshift(lib_path) unless $:.include?(lib_path)
 
@@ -48,7 +50,7 @@ task :debug do
   require 'term/ansicolor'
   require 'autoprefixer-rails'
   path = Bootstrap.stylesheets_path
-  %w(_bootstrap _bootstrap-flex _bootstrap-reboot _bootstrap-grid).each do |file|
+  %w(_bootstrap _bootstrap-reboot _bootstrap-grid).each do |file|
     engine = Sass::Engine.for_file("#{path}/#{file}.scss", syntax: :scss, load_paths: [path])
     out = File.join('tmp', "#{file[1..-1]}.css")
     css = engine.render

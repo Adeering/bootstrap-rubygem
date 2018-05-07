@@ -11,13 +11,11 @@ require 'rails'
 end
 
 require 'autoprefixer-rails'
-require 'compass'
 require 'slim-rails'
 require 'uglifier'
 
 require 'bootstrap'
 require 'jquery-rails'
-require 'rails-assets-tether'
 
 module Dummy
   class Application < Rails::Application
